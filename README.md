@@ -1,22 +1,18 @@
-# Template for ECS639U Individual Coursework
-
-This template should be used as the starting point for your individual coursework in the module ECS639U Web Programming (at Queen Mary University of London). Module leader: Paulo Oliva <[p.oliva@qmul.ac.uk](mailto:p.oliva@qmul.ac.uk)>
-
 ## Create conda environment
 
-After cloning this repository, create a conda environment for this project and activate the environment:
+Create a conda environment for this project and activate the environment:
 
 ```console
-$ conda create --name cwindividual python=3.11
-$ conda activate cwindividual
+$ conda create --name RoomBookingService python=3.11
+$ conda activate RoomBookingService
 ```
 
 ## Django backend
 
-The `backend` folder contains a [Django project](https://docs.djangoproject.com/en/stable/intro/tutorial01/) and was created with:
+The `backend` folder contains a [Django project]
 
 ```console
-(cwindividual)$ django-admin startproject backend
+(RoomBookingService)$ django-admin startproject backend
 ```
 
 ### Install backend (Python) dependencies
@@ -24,24 +20,22 @@ The `backend` folder contains a [Django project](https://docs.djangoproject.com/
 With the conda environment active, install the backend (Python) dependencies:
 
 ```console
-(cwindividual)$ cd backend
-(cwindividual)$ pip install -r requirements.txt
+(RoomBookingService)$ cd backend
+(RoomBookingService)$ pip install -r requirements.txt
 ```
-
-The main backend dependencies (see requirements.txt) are the Django framework itself (Django) and [django-cors-headers](https://pypi.org/project/django-cors-headers/) which is needed for CORS requests (since the request origin address http://localhost:5713 is different from the address that sent the JavaScript code to the browser http://localhost:8000).
 
 ### Start backend server
 
-To start the backend server cd into the backend folder where the manage.py file is (if not already there)
+To start the backend server cd into the backend folder where the manage.py file is
 
 ```console
-(cwindividual)$ cd backend
+(RoomBookingService)$ cd backend
 ```
 
 and run
 
 ```console
-(cwindividual)$ python manage.py runserver
+(RoomBookingService)$ python manage.py runserver
 ```
 
 The server will start on http://localhost:8000
@@ -58,10 +52,10 @@ and can be tested by visiting http://localhost:8000/api/test.json
 
 ## Vue frontend
 
-The `frontend` folder contains a [Vue/Vite project](https://vitejs.dev/guide/) and was created with:
+The `frontend` folder contains a [Vue/Vite project] and was created with:
 
 ```console
-(cwindividual)$ npm create vite@latest
+(RoomBookingService)$ npm create vite@latest
 ```
 
 ### Install frontend (JavaScript) dependencies
@@ -69,23 +63,23 @@ The `frontend` folder contains a [Vue/Vite project](https://vitejs.dev/guide/) a
 To install the frontend (JavaScript) dependencies cd into the frontend folder
 
 ```console
-(cwindividual)$ cd frontend
+(RoomBookingService)$ cd frontend
 ```
 
 and run:
 
 ```console
-(cwindividual)$ npm install
+(RoomBookingService)$ npm install
 ```
 
-The main frontend dependencies (see package.json) are [vue](https://vuejs.org/guide/introduction.html) and [bootstrap](https://getbootstrap.com/docs/5.0/getting-started/download/).
+The main frontend dependencies (see package.json) are [vue]
 
 ### Start frontend server
 
 To start the frontend server run
 
 ```console
-(cwindividual)$ npm run dev
+(RoomBookingService)$ npm run dev
 ```
 
 and the server will start on http://localhost:5173
