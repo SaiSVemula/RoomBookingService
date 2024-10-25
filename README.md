@@ -3,8 +3,8 @@
 Create a conda environment for this project and activate the environment:
 
 ```console
-$ conda create --name RoomBookingService python=3.11
-$ conda activate RoomBookingService
+create --name RoomBookingService python=3.11
+activate RoomBookingService
 ```
 
 ## Django backend
