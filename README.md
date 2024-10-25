@@ -14,8 +14,8 @@ $ conda activate RoomBookingService
 With the conda environment active, install the backend (Python) dependencies:
 
 ```console
-(RoomBookingService)$ cd backend
-(RoomBookingService)$ pip install -r requirements.txt
+cd backend
+pip install -r requirements.txt
 ```
 
 ### Start backend server
@@ -23,13 +23,13 @@ With the conda environment active, install the backend (Python) dependencies:
 To start the backend server cd into the backend folder where the manage.py file is
 
 ```console
-(RoomBookingService)$ cd backend
+cd backend
 ```
 
 and run
 
 ```console
-(RoomBookingService)$ python manage.py runserver
+python manage.py runserver
 ```
 
 The server will start on http://localhost:8000
@@ -41,13 +41,13 @@ The server will start on http://localhost:8000
 To install the frontend (JavaScript) dependencies cd into the frontend folder
 
 ```console
-(RoomBookingService)$ cd frontend
+cd frontend
 ```
 
 and run:
 
 ```console
-(RoomBookingService)$ npm install
+npm install
 ```
 
 The main frontend dependencies (see package.json) are [vue]
@@ -57,7 +57,7 @@ The main frontend dependencies (see package.json) are [vue]
 To start the frontend server run
 
 ```console
-(RoomBookingService)$ npm run dev
+npm run dev
 ```
 
 and the server will start on http://localhost:5173
