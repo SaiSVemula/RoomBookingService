@@ -1,5 +1,4 @@
 from django.http import JsonResponse, HttpResponse
-# from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404
 import json
 from .models import Room, User, Booking
@@ -11,7 +10,6 @@ def get_rooms(request):
         room_list = [{"id": room.id, "name": room.name, "capacity": room.capacity} for room in rooms]
         return JsonResponse(room_list, safe=False)
 
-# @csrf_exempt 
 def create_booking(request):
     if request.method == 'POST':
         try:
