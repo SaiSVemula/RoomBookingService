@@ -1,15 +1,48 @@
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Room, User, Booking
 
 
+# def get_rooms(request):
+#     if request.method == 'GET':
+#         rooms = Room.objects.all()
+#         room_list = [{"id": room.id, "name": room.name, "capacity": room.capacity} for room in rooms]
+#         return JsonResponse(room_list, safe=False)
 def get_rooms(request):
-    if request.method == 'GET':
-        rooms = Room.objects.all()
-        room_list = [{"id": room.id, "name": room.name, "capacity": room.capacity} for room in rooms]
-        return JsonResponse(room_list, safe=False)
+    rooms = Room.objects.all()
+    room_list = [{"id": room.id, "name": room.name, "capacity": room.capacity} for room in rooms]
+    return JsonResponse(room_list, safe=False)
 
+def get_bookings(request):
+    try:
+        bookings = Booking.objects.all()
+
+        booking_list = [{
+            "id": booking.id,
+            "user": {
+                "name": booking.user.name,
+                "email": booking.user.email
+            },
+            "room": {
+                "name": booking.room.name,
+                "capacity": booking.room.capacity
+            },
+            "start_hour": str(booking.start_hour),  # Ensure time is correctly serialized
+            "end_hour": str(booking.end_hour),      # Ensure time is correctly serialized
+            "status": booking.status,
+            "booking_date": str(booking.booking_date)  # Convert DateField to string
+        } for booking in bookings]
+
+        return JsonResponse(booking_list, safe=False)
+
+    except Exception as e:
+        # Log or print the error for debugging
+        print(f"Error fetching bookings: {e}")
+        return JsonResponse({"error": str(e)}, status=500)#
+    
+@csrf_exempt
 def create_booking(request):
     if request.method == 'POST':
         try:
@@ -31,7 +64,7 @@ def create_booking(request):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 
-# @csrf_exempt
+@csrf_exempt
 def update_booking(request, booking_id):
     if request.method == 'PUT':
         try:
@@ -48,7 +81,7 @@ def update_booking(request, booking_id):
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 
-# @csrf_exempt
+@csrf_exempt
 def delete_booking(request, booking_id):
     if request.method == 'DELETE':
         try:
