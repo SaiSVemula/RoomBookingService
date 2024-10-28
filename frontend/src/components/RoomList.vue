@@ -10,6 +10,34 @@
           :room="room"
           @select="selectRoom"
         />
+        <RoomCard
+          v-for="room in rooms"
+          :key="room.id"
+          :room="room"
+          @select="selectRoom"
+        />
+        <RoomCard
+          v-for="room in rooms"
+          :key="room.id"
+          :room="room"
+          @select="selectRoom"
+        />
+        <RoomCard
+          v-for="room in rooms"
+          :key="room.id"
+          :room="room"
+          @select="selectRoom"
+        />        <RoomCard
+          v-for="room in rooms"
+          :key="room.id"
+          :room="room"
+          @select="selectRoom"
+        />        <RoomCard
+          v-for="room in rooms"
+          :key="room.id"
+          :room="room"
+          @select="selectRoom"
+        />
       </div>
     </div>
   </template>

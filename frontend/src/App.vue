@@ -13,8 +13,8 @@
 //used for testing not for production  
 // import TestCRUD from './components/Test/TestCRUD.vue'
 // import TestCRUDforms from './components/Test/TestCRUDforms.vue'
-import NavBar from './components/NavBar.vue'
-import FooterComp from './components/FooterComp.vue'
+import NavBar from './components/static/NavBar.vue'
+import FooterComp from './components/static/FooterComp.vue'
 import RoomList from './components/RoomList.vue'
 
 const baseUrl = 'http://localhost:8000'
