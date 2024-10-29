@@ -1,14 +1,13 @@
-<!-- App.vue -->
 <template>
     <NavBar />
     <div id="app">
-      <div class="container mt-4">
-        <RoomList :rooms="rooms" @selectRoom="handleRoomSelection" /> <!-- Listen for the 'selectRoom' event from RoomList -->
-      </div>
-    </div> 
+        <div class="container mt-4">
+            <RoomList :rooms="rooms" @selectRoom="handleRoomSelection" />
+        </div>
+    </div>
     <FooterComp />
 </template>
-  
+
 <script>
 //used for testing not for production  
 // import TestCRUD from './components/Test/TestCRUD.vue'
@@ -26,11 +25,11 @@ export default {
         RoomList,
     },
     data() {
-      return {
-          rooms: [],
+        return {
+            rooms: [],
             selectedRoom: null,
-          bookings: [],
-          users: [],
+            bookings: [],
+            users: [],
         }
     },
     created() {
